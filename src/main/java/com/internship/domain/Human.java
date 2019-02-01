@@ -9,7 +9,9 @@ import javax.persistence.*;
 @Data
 @ToString
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorValue("human")
+@DiscriminatorColumn(name = "human_kind")
 public abstract class Human extends Organism{
 
     @Id
