@@ -8,8 +8,7 @@ import javax.persistence.*;
 @Data
 @ToString
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "organism_type")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Organism  {
 
     @Id
