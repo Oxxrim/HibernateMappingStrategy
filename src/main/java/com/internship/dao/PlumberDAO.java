@@ -13,5 +13,6 @@ public class PlumberDAO {
         plumber.setSalary(1000);
 
         DAOUtil.save(plumber);
+        DAOUtil.checkResults();
     }
 }

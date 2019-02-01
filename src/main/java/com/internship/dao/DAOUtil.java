@@ -2,8 +2,8 @@ package com.internship.dao;
 
 import com.internship.util.HibernateUtil;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+
+import java.util.List;
 
 public class DAOUtil {
 
@@ -33,5 +33,21 @@ public class DAOUtil {
         session.getTransaction().commit();
 
         session.close();
+    }
+
+    public static void checkResults(){
+        session = HibernateUtil.getSessionFactory().openSession();
+
+        session.getTransaction().begin();
+
+        List organisms = session.createQuery("select bd from Organism bd").list();
+
+        session.getTransaction().commit();
+
+        session.close();
+
+        for (int i = 0; i < organisms.size(); i++) {
+            System.out.println(organisms.get(i));
+        }
     }
 }
