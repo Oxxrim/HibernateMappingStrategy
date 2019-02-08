@@ -14,7 +14,7 @@ public abstract class Human extends Organism{
 
     @Id
     /*@SequenceGenerator(name = "seq", allocationSize = 1)*/
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     private String kindOfActivity;
 }
