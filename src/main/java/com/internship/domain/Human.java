@@ -13,7 +13,8 @@ import javax.persistence.*;
 public abstract class Human extends Organism{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    /*@SequenceGenerator(name = "seq", allocationSize = 1)*/
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
     private int id;
     private String kindOfActivity;
 }

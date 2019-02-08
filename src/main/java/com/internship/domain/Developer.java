@@ -3,10 +3,7 @@ package com.internship.domain;
 import lombok.Data;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @ToString
@@ -14,7 +11,8 @@ import javax.persistence.Id;
 public class Developer extends Human{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    /*@SequenceGenerator(name = "seq", allocationSize = 1)*/
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
     private int id;
     private String name;
     private int salary;
